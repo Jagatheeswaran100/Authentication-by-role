@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Role login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <form>
+                <div class="input-group">
+
+                    <div class="input-field">
+                        <select name="role" id="role">
+                            <option value="" selected>--Choose your role--</option>
+                            <option value="admin">Admin</option>
+                            <option value="client">Client</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="btn-field">
+                    <button type="button" id="signupBtn" onclick="submitForm()">LOGIN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+
+        function submitForm() {
+            const role = document.getElementById('role').value;
+            if (role === 'admin') {
+                window.location.href = 'dashboard.html';
+            } else if (role === 'client') {
+                alert("You have not access as a Client");
+            } else {
+                alert("Please choose your role")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
